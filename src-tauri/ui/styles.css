@@ -1,0 +1,18 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    margin: 0;
+
+    /* Debugging */
+    /* outline: thin solid white; */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: #242424;
+    padding: 1rem;
+    color: white;
+    min-height: calc(100vh - 2rem);
+}
