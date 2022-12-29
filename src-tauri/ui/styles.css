@@ -55,6 +55,7 @@ section#shortcuts div.shortcut p.desc {
     font-style: italic;
     font-size: 0.6em;
     text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 section#shortcuts div.shortcut button.edit-btn {
