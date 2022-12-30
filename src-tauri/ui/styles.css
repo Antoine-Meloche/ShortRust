@@ -8,6 +8,68 @@
     /* outline: thin solid white; */
 }
 
+.modal {
+    position: relative;
+    height: calc(75% - 6rem);
+    width: min(calc(75% - 6rem), 75rem);
+    background: #f8f8f2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.modal input,
+.modal textarea {
+    margin: 1.5rem;
+    background: none;
+    border: black 1px solid;
+    border-radius: .25rem;
+    padding: .5rem;
+}
+
+.modal .new-short-desc {
+    height: 10rem;
+    resize: vertical;
+}
+
+.modal .submit-btn {
+    position: absolute;
+    bottom: 3rem;
+    right: 4.5rem;
+    padding: .75rem;
+    background: none;
+    border: 2px solid black;
+    border-radius: .1rem;
+    cursor: pointer;
+    outline: 2px solid black;
+    outline-offset: -.15rem;
+    transition: 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.modal .submit-btn:hover {
+    outline-offset: -.45rem;
+}
+
+.modal .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.modal .close-btn:hover {
+    transform: rotate(540deg);
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -17,10 +79,40 @@ main {
     min-height: calc(100vh - 2rem);
 }
 
-main h1 {
-    margin: 2.5rem;
-    margin-bottom: 0;
+main header {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 6rem);
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+}
+
+main header h1 {
     color: #bd93f9;
+}
+
+main header button#add-btn {
+    display: grid;
+    place-items: center;
+    background: #44475a;
+    border: none;
+    border-radius: .25rem;
+    height: 2rem;
+    width: 3rem;
+    font-size: 1.75rem;
+    color: #f8f8f2;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: #f8f8f2 0px 0px;
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+main header button#add-btn:hover {
+    box-shadow: #f8f8f2 1px 1px;
+    height: 2.25rem;
+    width: 3.25rem;
 }
 
 separator {
@@ -37,7 +129,7 @@ section#shortcuts {
     min-height: 50rem;
     width: calc(100% - 3rem);
     gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     overflow: hidden;
 }
 
@@ -54,8 +146,12 @@ section#shortcuts div.shortcut p.desc {
     margin: 1rem;
     font-style: italic;
     font-size: 0.6em;
+    min-height: 1rem;
+    width: calc(100vw - 16rem);
+    max-height: 3.4em;
+    display: inline-block;
     text-overflow: ellipsis;
-    max-width: 100%;
+    overflow: hidden;
 }
 
 section#shortcuts div.shortcut button.edit-btn {
